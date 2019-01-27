@@ -1,0 +1,16 @@
+
+<!-- // 视图 -->
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" 
+      (click)="onSelect(hero)" 
+      [class.selected]="hero === selectedHero">
+    
+      <span class="badge">{{hero.id}}</span>{{hero.name}}
+  
+    </li>
+</ul>
+
+<!-- 单向数据绑定 [hero]="selectedHero" -->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
