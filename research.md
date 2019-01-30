@@ -8,6 +8,26 @@
 
 4. ts 语法
 
+5. 为什么此处必须加修饰符？？
+```ts
+constructor(private el: ElementRef) { // 为什么此处必须加修饰符？？
+    // el = el;
+    // el.nativeElement.style.backgroundColor = 'yellow';
+  }
+
+  @HostListener('mouseenter') onMouseEnter() {
+    this.highlight('yellow');
+  }
+
+  @HostListener('mouseleave') onMouseLeave() {
+    this.highlight(null);
+  }
+
+  private highlight(color: string) {
+    this.el.nativeElement.style.backgroundColor = 'yellow';
+  }
+```
+
 # Note：
 ## MVVM
 从使用模型-视图-控制器 (MVC) 或模型-视图-视图模型 (MVVM) 的经验中，很多开发人员都熟悉了组件和模板这两个概念。 在 Angular 中，**组件**扮演着**控制器或视图模型**的角色，**模板**则扮演**视图**的角色。
@@ -82,4 +102,42 @@ hero 前的 let 关键字创建了一个名叫 hero 的模板(输入)变量。 n
 <button (click)="deleteHero()">Delete hero</button>
 ```
 和模板表达式一样，模板语句使用的语言也像 JavaScript。 模板语句解析器和模板表达式解析器有所不同，特别之处在于它支持基本赋值 (=) 和表达式链 (; 和 ,)。
+
+## HTML attribute and DOM property
+就算名字相同，HTML **attribute** 和 **DOM property** 也不是同一样东西
+
+> 要想理解 Angular 绑定如何工作，重点是搞清 HTML attribute 和 DOM property 之间的区别。
+
+**attribute** 是由 HTML 定义的。**property** 是由 DOM (Document Object Model) 定义的。
+
+* 少量 HTML attribute 和 property 之间有着 1:1 的映射，如 id。
+
+* 有些 HTML attribute 没有对应的 property，如 colspan。
+
+* 有些 DOM property 没有对应的 attribute，如 textContent。
+
+* 大量 HTML attribute 看起来映射到了 property…… 但却不像你想的那样！
+
+最后一类尤其让人困惑…… 除非你能理解这个普遍原则：
+
+**attribute** 初始化 **DOM property**，然后它们的任务就完成了。**property 的值可以改变；attribute 的值不能改变**。
+
+例1. 
+当浏览器渲染 `<input type="text" value="Bob">` 时，它将创建相应 DOM 节点， 它的 value 这个 **property** 被初始化为 “Bob”。
+
+当用户在输入框中输入 “Sally” 时，DOM 元素的 value 这个 property 变成了 “Sally”。 但是该 HTML 的 value 这个 **attribute** 保持不变。如果你读取 input 元素的 attribute，就会发现确实没变： `input.getAttribute('value') // 返回 "Bob"`。
+
+HTML 的 value 这个 attribute 指定了初始值；DOM 的 value 这个 property 是当前值。
+
+例2. 
+disabled 这个 attribute 是另一种特例。按钮的 disabled 这个 property 是 false，因为默认情况下按钮是可用的。 当你添加 disabled 这个 attribute 时，只要它出现了按钮的 disabled 这个 property 就初始化为 true，于是按钮就被禁用了。
+
+添加或删除 disabled 这个 attribute 会禁用或启用这个按钮。但 attribute 的值无关紧要，这就是你为什么没法通过` <button disabled="false">`仍被禁用</button> 这种写法来启用按钮。
+
+设置按钮的 disabled 这个 property（如，通过 Angular 绑定）可以禁用或启用这个按钮。 这就是 property 的价值。
+
+**A world without attributes**
+> 在 Angular 的世界中，`attribute` 唯一的作用是用来初始化元素和指令的状态。 当进行数据绑定时，只是在与元素和指令的 `property` 和事件打交道，而 `attribute` 就完全靠边站了。
+
+
 

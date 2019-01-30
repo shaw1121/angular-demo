@@ -3,7 +3,7 @@ import { Hero } from '../hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { HeroService }  from '../hero.service';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -18,20 +18,20 @@ export class HeroDetailComponent implements OnInit {
     private location: Location
   ) {}
 
+  @Input() hero: Hero; // 这个组件所做的只是通过 hero 属性接收一个英雄对象，并显示它。
+
   ngOnInit(): void {
     this.getHero();
   }
-  
+
   getHero(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
   }
 
-  @Input() hero: Hero; // 这个组件所做的只是通过 hero 属性接收一个英雄对象，并显示它。
-
   goBack(): void {
     this.location.back();
   }
-  
+
 }

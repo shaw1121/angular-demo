@@ -8,4 +8,18 @@
 <router-outlet></router-outlet>
 <app-messages></app-messages>
 
+<!-- [appHighlight] 属性同时做了两件事：把这个高亮指令应用到了 <p> 元素上，并且通过属性绑定设置了该指令的高亮颜色 -->
+<!-- <p appHighlight [highlightColor]="color">Highlighted with parent component's color</p> -->
+<p [appHighlight]="color">Highlight me</p>
 
+<h4>pick a color</h4>
+<div>
+  <input type="radio" name="colors" (click)="color='yellow'">yellow
+  <input type="radio" name="colors" (click)="color='red'">red
+  <input type="radio" name="colors" (click)="color='blue'">blue
+</div>
+<p [appHighlight]="color">change my color</p>
+
+<p [appHighlight]="color" defaultColor="violet">
+  Highlight me too!
+</p>
