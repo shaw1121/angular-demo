@@ -14,6 +14,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HighlightDirective } from './highlight.directive';
 import { UnlessDirective } from './unless.directive';
 import { DatePipeComponent } from './date-pipe/date-pipe.component';
+import { ExponentialStrengthPipe } from './exponential-strength.pipe';
+import { PowerBoosterComponent } from './power-booster/power-booster.component';
 
 @NgModule({
   declarations: [ // 每个组件都必须声明在（且只能声明在）一个 NgModule 中。
@@ -24,7 +26,9 @@ import { DatePipeComponent } from './date-pipe/date-pipe.component';
     DashboardComponent,
     HighlightDirective,
     UnlessDirective,
-    DatePipeComponent
+    DatePipeComponent,
+    ExponentialStrengthPipe,
+    PowerBoosterComponent
   ],
   imports: [
     BrowserModule,
