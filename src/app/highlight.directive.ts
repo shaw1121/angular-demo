@@ -12,7 +12,7 @@ export class HighlightDirective {
   }
 
   // 它之所以称为输入属性，是因为数据流是从绑定表达式流向指令内部的。 如果没有这个元数据，Angular 就会拒绝绑定
-  // 指定 highlightColor 的别名 appHighlight; 在指令内部，该属性叫 highlightColor，在外部，你绑定到它地方，它叫 appHighligh
+  // 指定 highlightColor 的别名 appHighlight; 在指令内部，该属性叫 highlightColor，在外部，你绑定到的地方，它叫 appHighligh
   @Input('appHighlight') highlightColor: string;
   @Input() defaultColor: string;
 
@@ -28,4 +28,3 @@ export class HighlightDirective {
     this.el.nativeElement.style.backgroundColor = color;
   }
 }
-
