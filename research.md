@@ -139,5 +139,38 @@ disabled 这个 attribute 是另一种特例。按钮的 disabled 这个 propert
 **A world without attributes**
 > 在 Angular 的世界中，`attribute` 唯一的作用是用来初始化元素和指令的状态。 当进行数据绑定时，只是在与元素和指令的 `property` 和事件打交道，而 `attribute` 就完全靠边站了。
 
+## 模板表达式操作符
+* 管道操作符(|)
+管道是一个简单的函数，它接受一个输入值，并返回转换结果。 它们很容易用于模板表达式中，只要使用管道操作符 (|) 就行了。
+```js
+<div>Title through uppercase pipe: {{title | uppercase}}</div>
+```
+管道操作符会把它左侧的表达式结果传给它右侧的管道函数。
 
+* 安全导航操作符( ?. ) 和 空属性路径
+Angular 的安全导航操作符 (?.) 是一种流畅而便利的方式，用来保护出现在属性路径中 null 和 undefined 值。 下例中，当 currentHero 为空时，保护视图渲染器，让它免于失败。
+```js
+The current hero's name is {{currentHero?.name}}
+```
+Angular 安全导航操作符 (?.) 是在属性路径中保护空值的更加流畅、便利的方式。 表达式会在它遇到第一个空值的时候跳出。 显示是空的，但应用正常工作，而没有发生错误。
 
+```js
+<!-- No hero, no problem! -->
+The null hero's name is {{nullHero?.name}}
+```
+在像 a?.b?.c?.d 这样的长属性路径中，它工作得很完美.
+
+* 非空断言操作符
+在 TypeScript 2.0 中，你可以使用 --strictNullChecks 标志强制开启严格空值检查。TypeScript 就会确保不存在意料之外的 null 或 undefined。
+
+在用*ngIf来检查过 hero 是已定义的之后，就可以断言 hero 属性一定是已定义的。
+```js
+<!--No hero, no text -->
+<div *ngIf="hero">
+  The hero's name is {{hero!.name}}
+</div>
+```
+在 Angular 编译器把你的模板转换成 TypeScript 代码时，这个操作符会防止 TypeScript 报告 "hero.name 可能为 null 或 undefined"的错误。
+与安全导航操作符不同的是，非空断言操作符不会防止出现 null 或 undefined。 它只是告诉 TypeScript 的类型检查器对特定的属性表达式，不做 "严格空值检测"。
+
+如果你打开了严格控制检测，那就要用到这个模板操作符，而其它情况下则是可选的。

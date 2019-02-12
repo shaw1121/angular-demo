@@ -16,6 +16,16 @@ import { UnlessDirective } from './unless.directive';
 import { DatePipeComponent } from './date-pipe/date-pipe.component';
 import { ExponentialStrengthPipe } from './exponential-strength.pipe';
 import { PowerBoosterComponent } from './power-booster/power-booster.component';
+import { FlyingHeroesComponent } from './flying-heroes/flying-heroes.component';
+import { FlyingHeroesPipe } from './flying-heroes.pipe';
+import { HeroChildComponent } from './hero-child/hero-child.component';
+import { HeroParentComponent } from './hero-parent/hero-parent.component';
+import { NameChildComponent } from './name-child/name-child.component';
+import { NameParentComponent } from './name-parent/name-parent.component';
+import { VersionParentComponent } from './version-parent/version-parent.component';
+import { VersionChildComponent } from './version-child/version-child.component';
+import { VoterChildComponent } from './voter-child/voter-child.component';
+import { VoterParentComponent } from './voter-parent/voter-parent.component';
 
 @NgModule({
   declarations: [ // 每个组件都必须声明在（且只能声明在）一个 NgModule 中。
@@ -28,7 +38,17 @@ import { PowerBoosterComponent } from './power-booster/power-booster.component';
     UnlessDirective,
     DatePipeComponent,
     ExponentialStrengthPipe,
-    PowerBoosterComponent
+    PowerBoosterComponent,
+    FlyingHeroesComponent,
+    FlyingHeroesPipe,
+    HeroChildComponent,
+    HeroParentComponent,
+    NameChildComponent,
+    NameParentComponent,
+    VersionParentComponent,
+    VersionChildComponent,
+    VoterChildComponent,
+    VoterParentComponent,
   ],
   imports: [
     BrowserModule,
