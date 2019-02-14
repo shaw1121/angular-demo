@@ -17,14 +17,14 @@ export class HeroesComponent implements OnInit {
   // 赋值给属性。 构造函数不应该做任何事。 它当然不应该调用某个函数来向远端服务（比如真实的数据服务）发起 HTTP 请求。
   constructor(private heroService: HeroService) { }
 
+  // heroes = HEROES;
+  heroes: Hero[];
+
   ngOnInit() {
     this.getHeroes();
   }
 
-  // heroes = HEROES;
-  heroes: Hero[];
-
-  getHeroes(): void{
+  getHeroes(): void {
     this.heroService.getHeroes()
         .subscribe(heroes => this.heroes = heroes);
   }
