@@ -3,8 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-flying-heroes',
-  templateUrl: './flying-heroes.component.html',
-  styleUrls: ['./flying-heroes.component.scss']
+  templateUrl: './flying-heroes.component.html'
 })
 export class FlyingHeroesComponent {
 
