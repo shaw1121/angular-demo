@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' // 指定把被装饰类的提供商放到 root 注入器中
 })
 export class HeroService {
 
