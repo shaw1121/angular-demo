@@ -1,3 +1,4 @@
+import { CustomerDashboardModule } from './customer-dashboard/customer-dashboard.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -62,6 +63,8 @@ import { VoterParentComponent } from './voter-parent/voter-parent.component';
     // HttpClientInMemoryWebApiModule.forRoot(
     //   InMemoryDataService, { dataEncapsulation: false }
     // )
+
+    CustomerDashboardModule // 特性模块
   ],
   providers: [],
   bootstrap: [AppComponent]
