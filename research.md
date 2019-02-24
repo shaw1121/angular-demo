@@ -27,6 +27,10 @@ constructor(private el: ElementRef) { // 为什么此处必须加修饰符？？
   }
 ```
 
+6. ngrx/store 状态管理   
+refer: https://ngrx.io/api/store/createSelector
+       https://blog.csdn.net/fen747042796/article/details/74840844
+
 ## MVVM
 从使用模型-视图-控制器 (MVC) 或模型-视图-视图模型 (MVVM) 的经验中，很多开发人员都熟悉了组件和模板这两个概念。 在 Angular 中，**组件**扮演着**控制器或视图模型**的角色，**模板**则扮演**视图**的角色。
 eg:
