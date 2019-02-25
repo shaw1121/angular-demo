@@ -1,3 +1,4 @@
+import { HeroChildComponent } from './hero-child/hero-child.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: '', redirectTo: './dashboard', pathMatch: 'full' },
   { path: 'detail/:id', component: HeroDetailComponent },
+  { path: 'hero', component: HeroChildComponent, data: {title : 'test-router'}}
 ];
 
 @NgModule({
