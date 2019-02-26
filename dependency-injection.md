@@ -193,7 +193,7 @@ Angular 根据 deps 数组中指定的两个令牌来提供这些注入参数。
 
 该函数返回名字的字符串，Angular 可以把它们注入到 HeroOfTheMonthComponent 的 runnersUp 参数中。
 
-源码
+`FactoryProvider`源码
 ```ts
 export interface FactoryProvider {
     /**
