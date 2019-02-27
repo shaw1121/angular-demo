@@ -31,6 +31,13 @@ constructor(private el: ElementRef) { // 为什么此处必须加修饰符？？
 refer: https://ngrx.io/api/store/createSelector
        https://blog.csdn.net/fen747042796/article/details/74840844
 
+7. 模板表达式中可否使用正则表达式
+
+测试无法使用，只能在ts文件里写个函数（正则表达式可用），在模板里调用这个函数来处理
+```html
+<h2>{{ regular.replace((\/)-(\/)g, '_') }}</h2>
+```
+
 ## MVVM
 从使用模型-视图-控制器 (MVC) 或模型-视图-视图模型 (MVVM) 的经验中，很多开发人员都熟悉了组件和模板这两个概念。 在 Angular 中，**组件**扮演着**控制器或视图模型**的角色，**模板**则扮演**视图**的角色。
 eg:
