@@ -1,10 +1,10 @@
-import { HeroChildComponent } from './hero-child/hero-child.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { HeroesComponent } from './heroes/heroes.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroesComponent } from './components/heroes/heroes.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
+import { HeroChildComponent } from './components/hero-child/hero-child.component';
 
 const routes: Routes = [
   // path: 一个用于匹配浏览器地址栏中 URL 的字符串

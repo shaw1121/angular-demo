@@ -36,3 +36,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * [组件交互 父子通信](https://github.com/shaw1121/angular-demo/blob/master/component-interaction.md)
 * [依赖注入](https://github.com/shaw1121/angular-demo/blob/master/dependency-injection.md)
 * [需要研究的问题及模板语法](https://github.com/shaw1121/angular-demo/blob/master/research.md)
+* [Angular-router路由](https://github.com/shaw1121/angular-demo/blob/master/route.md)

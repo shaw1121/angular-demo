@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Flyer } from './heroes';
+import { Flyer } from '../model/heroes';
 
 @Pipe({
   name: 'flyingHeroes'

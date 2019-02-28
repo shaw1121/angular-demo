@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Hero } from './hero';
-import { HEROES } from './mock-heroes';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
+import { Hero } from '../model/hero';
+import { HEROES } from '../model/mock-heroes';
+// import { HEROES } from '../model/heroes';
 
 @Injectable({
   providedIn: 'root' // 指定把被装饰类的提供商放到 root 注入器中

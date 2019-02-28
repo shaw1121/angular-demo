@@ -10,8 +10,7 @@ import { Component } from '@angular/core';
       (voted)="onVoted($event)"
     >
     </app-voter-child>
-  `,
-  styleUrls: ['./voter-parent.component.scss']
+  `
 })
 export class VoterParentComponent {
   agreed = 0;

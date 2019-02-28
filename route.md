@@ -14,29 +14,28 @@ Angular 的 Router（即“路由器”）借鉴了这个模型。它把浏览�
 
 ### 基础知识
 
-大多数带路由的应用都要在index.html的 <head> 标签下先添加一个 <base> 元素，来告诉路由器该如何合成导航用的 URL。
+大多数带路由的应用都要在index.html的 `<head>` 标签下先添加一个 `<base>` 元素，来告诉路由器该如何合成导航用的 URL。
 
 如果 app 文件夹是该应用的根目录（就像范例应用中一样），那就把 href 的值设置为下面这样：
 ```html
 <base href="/">
-
 ```
 
-* 把 路由集成到应用中
+* 把路由集成到应用中
 
-路由应用范例中默认不包含路由。 要想在使用 Angular CLI 创建项目时支持路由，请为项目或应用的每个 NgModule 设置 --routing 选项。 当你用 CLI 命令 ng new 创建新项目或用 ng generate app 命令创建新应用，请指定 --routing 选项。这会告诉 CLI 包含上 @angular/router 包，并创建一个名叫 app-routing.module.ts 的文件。 然后你就可以在添加到项目或应用中的任何 NgModule 中使用路由功能了。
+路由应用范例中默认不包含路由。 要想在使用 Angular CLI 创建项目时支持路由，请为项目或应用的每个 NgModule 设置 `--routing` 选项。 当你用 CLI 命令 `ng new` 创建新项目或用 `ng generate app` 命令创建新应用，请指定 `--routing` 选项。这会告诉 CLI 包含上 `@angular/router` 包，并创建一个名叫 `app-routing.module.ts` 的文件。 然后你就可以在添加到项目或应用中的任何 NgModule 中使用路由功能了。
 
 比如，可以用下列命令生成带路由的 NgModule。
 ```js
 ng generate module my-module --routing
 ```
-这将创建一个名叫 my-module-routing.module.ts 的独立文件，来保存这个 NgModule 的路由信息。 该文件包含一个空的 Routes 对象，你可以使用一些指向各个组件和 NgModule 的路由来填充该对象。
+这将创建一个名叫 `my-module-routing.module.ts` 的独立文件，来保存这个 NgModule 的路由信息。 该文件包含一个空的 `Routes` 对象，你可以使用一些指向各个组件和 NgModule 的路由来填充该对象。
 
 
 ### 导入模块的顺序很重要
 
 导入模块的顺序很重要
-看看该模块的 imports 数组。注意，AppRoutingModule 是最后一个。最重要的是，它位于 HeroesModule 之后。
+看看该模块的 imports 数组。注意，`AppRoutingModule` 是最后一个。最重要的是，它**位于 HeroesModule 之后**。
 
 ```ts
 imports: [
@@ -61,4 +60,28 @@ id 的值像这样出现在 URL 中（;id=15;foo=foo），但不在 URL 的路�
 
 可选的路由参数没有使用“？”和“&”符号分隔，因为它们将用在 URL 查询字符串中。 它们是用“;”分隔的。 这是矩阵 URL标记法。
 
+### 重要的接口 
 
+* `ActivatedRoute`
+
+> Contains the information about a route associated with a component loaded in an outlet. An ActivatedRoute can also be used to traverse the router state tree.
+
+https://angular.cn/api/router/ActivatedRoute#description
+
+* `ActivatedRouteSnapshot`
+> Contains the information about a route associated with a component loaded in an outlet at a particular moment in time. ActivatedRouteSnapshot can also be used to traverse the router state tree.
+
+当前瞬间信息
+
+https://angular.cn/api/router/ActivatedRouteSnapshot
+
+### 通过 heroes 讲解特性区
+
+
+
+### 通过 crisis-center 讲解 子路由
+
+
+
+Refer:   
+https://angular.cn/guide/router#routing--navigation
