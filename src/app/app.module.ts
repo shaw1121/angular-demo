@@ -1,32 +1,31 @@
-import { CustomerDashboardModule } from './customer-dashboard/customer-dashboard.module';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { FormsModule } from '@angular/forms';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { MessagesComponent } from './messages/messages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-// import { InMemoryDataService }  from './in-memory-data.service';
-import { HighlightDirective } from './highlight.directive';
-import { UnlessDirective } from './unless.directive';
-import { DatePipeComponent } from './date-pipe/date-pipe.component';
-import { ExponentialStrengthPipe } from './exponential-strength.pipe';
-import { PowerBoosterComponent } from './power-booster/power-booster.component';
-import { FlyingHeroesComponent } from './flying-heroes/flying-heroes.component';
-import { FlyingHeroesPipe } from './flying-heroes.pipe';
-import { HeroChildComponent } from './hero-child/hero-child.component';
-import { HeroParentComponent } from './hero-parent/hero-parent.component';
-import { NameChildComponent } from './name-child/name-child.component';
-import { NameParentComponent } from './name-parent/name-parent.component';
-import { VersionParentComponent } from './version-parent/version-parent.component';
-import { VersionChildComponent } from './version-child/version-child.component';
-import { VoterChildComponent } from './voter-child/voter-child.component';
-import { VoterParentComponent } from './voter-parent/voter-parent.component';
+import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HighlightDirective } from './directive/highlight.directive';
+import { UnlessDirective } from './directive/unless.directive';
+import { DatePipeComponent } from './components/date-pipe/date-pipe.component';
+import { ExponentialStrengthPipe } from './pipe/exponential-strength.pipe';
+import { PowerBoosterComponent } from './components/power-booster/power-booster.component';
+import { FlyingHeroesComponent } from './components/flying-heroes/flying-heroes.component';
+import { FlyingHeroesPipe } from './pipe/flying-heroes.pipe';
+import { HeroChildComponent } from './components/hero-child/hero-child.component';
+import { HeroParentComponent } from './components/hero-parent/hero-parent.component';
+import { NameChildComponent } from './components/name-child/name-child.component';
+import { NameParentComponent } from './components/name-parent/name-parent.component';
+import { VersionParentComponent } from './components/version-parent/version-parent.component';
+import { VersionChildComponent } from './components/version-child/version-child.component';
+import { VoterChildComponent } from './components/voter-child/voter-child.component';
+import { VoterParentComponent } from './components/voter-parent/voter-parent.component';
+import { CustomerDashboardModule } from './components/customer-dashboard/customer-dashboard.module';
+
 
 @NgModule({
   declarations: [ // 每个组件都必须声明在（且只能声明在）一个 NgModule 中。
