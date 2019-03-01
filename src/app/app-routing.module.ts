@@ -17,7 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {enableTracing: true}), CommonModule],
+  imports: [RouterModule.forRoot(routes), CommonModule],
   exports: [RouterModule] // 导出 RouterModule 让路由器的相关指令可以在 AppModule 中的组件中使用。
 })
 export class AppRoutingModule { }
