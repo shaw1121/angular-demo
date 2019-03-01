@@ -1,0 +1,131 @@
+Favorite Color(响应式表单): <input type="text" [formControl]="favoriteColorControl">
+
+Favorite Color(模板驱动表单): <input type="text" [(ngModel)]="favoriteColor">
+<br>
+<label>
+  Name: 
+  <input type="text" [formControl]="name">
+  <p>input value: {{ name.value }}</p>
+</label>
+
+<div>
+  <button (click)="updateName()">Update name</button>
+</div>
+
+<div class="container">
+  <h3>响应式表单</h3>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmitReactiveForm()">
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName">
+    </label>
+
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName">
+    </label>
+
+    <div formGroupName="address">
+      <h4>Address</h4>
+    
+      <label>
+        Street:
+        <input type="text" formControlName="street">
+      </label>
+    
+      <label>
+        City:
+        <input type="text" formControlName="city">
+      </label>
+      
+      <label>
+        State:
+        <input type="text" formControlName="state">
+      </label>
+    
+      <label>
+        Zip Code:
+        <input type="text" formControlName="zip">
+      </label>
+    </div>
+
+    <div formArrayName="aliases">
+      <h5>Aliases</h5> 
+      
+      <button (click)="addAlias()">Add Alias</button>
+    
+      <div *ngFor="let address of aliases.controls; let i=index">
+        <!-- The repeated alias template -->
+        <label>
+          Alias:
+          <input type="text" [formControlName]="i">
+        </label>
+      </div>
+    </div>
+    <p>
+      Form value: {{ profileForm.value | json}}
+    </p>
+    <p>
+      Form Status: {{ profileForm.status }}
+    </p>
+
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>
+</div>
+
+<div class="container">
+  <h3>模板驱动表单--Super hero form</h3>
+
+  <div [hidden]="submitted">
+    <form #heroForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" required
+                  required
+                  [(ngModel)]="model.name" name="name" 
+                  #spy="ngModel">
+                  <!-- 当在表单中使用 [(ngModel)] 时，必须要定义 name 属性。 -->
+          <div [hidden]="spy.valid || spy.pristine" class="alert alert-danger">
+            Name is required
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="alterEgo">Alter Ego</label>
+          <input type="text" class="form-control" id="alterEgo" [(ngModel)]="model.alterEgo" name="alterEgo">
+        </div>
+    
+        <div class="form-group">
+          <label for="power">Hero power</label>
+          <select class="form-control" id="power" required [(ngModel)]="model.power" name="power">
+            <option *ngFor="let pow of powers" [value]="pow">
+              {{pow}}
+            </option>
+          </select>
+        </div>
+    
+        <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+    
+        <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>You submitted the following information:</h2>
+    <div class="row">
+      <div class="col-xs-3">Name</div>
+      <div class="col-xs-9">{{ model.name }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Alter Ego</div>
+      <div class="col-xs-9">{{ model.alterEgo }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Power</div>
+      <div class="col-xs-9">{{ model.power }}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>
+
+</div>

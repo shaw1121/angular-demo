@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +25,7 @@ import { VersionChildComponent } from './components/version-child/version-child.
 import { VoterChildComponent } from './components/voter-child/voter-child.component';
 import { VoterParentComponent } from './components/voter-parent/voter-parent.component';
 import { CustomerDashboardModule } from './components/customer-dashboard/customer-dashboard.module';
+import { FormDemoComponent } from './components/form-demo/form-demo.component';
 
 
 @NgModule({
@@ -49,13 +50,14 @@ import { CustomerDashboardModule } from './components/customer-dashboard/custome
     VersionChildComponent,
     VoterChildComponent,
     VoterParentComponent,
+    FormDemoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-
+    ReactiveFormsModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
