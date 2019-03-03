@@ -26,6 +26,7 @@ import { VoterChildComponent } from './components/voter-child/voter-child.compon
 import { VoterParentComponent } from './components/voter-parent/voter-parent.component';
 import { CustomerDashboardModule } from './components/customer-dashboard/customer-dashboard.module';
 import { FormDemoComponent } from './components/form-demo/form-demo.component';
+import { ForbiddenNameDirective } from './directive/forbidden-name.directive';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { FormDemoComponent } from './components/form-demo/form-demo.component';
     VoterChildComponent,
     VoterParentComponent,
     FormDemoComponent,
+    ForbiddenNameDirective,
   ],
   imports: [
     BrowserModule,
