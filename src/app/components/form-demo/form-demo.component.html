@@ -2,6 +2,7 @@ Favorite Color(响应式表单): <input type="text" [formControl]="favoriteColor
 
 Favorite Color(模板驱动表单): <input type="text" [(ngModel)]="favoriteColor">
 <br>
+
 <label>
   Name: 
   <input type="text" [formControl]="name">
@@ -12,6 +13,7 @@ Favorite Color(模板驱动表单): <input type="text" [(ngModel)]="favoriteColo
   <button (click)="updateName()">Update name</button>
 </div>
 
+<!-- 响应式表单 start -->
 <div class="container">
   <h3>响应式表单</h3>
   <form [formGroup]="profileForm" (ngSubmit)="onSubmitReactiveForm()">
@@ -72,7 +74,9 @@ Favorite Color(模板驱动表单): <input type="text" [(ngModel)]="favoriteColo
     <button type="submit" [disabled]="!profileForm.valid">Submit</button>
   </form>
 </div>
+<!-- 响应式表单 over -->
 
+<!-- 模板驱动表单 start -->
 <div class="container">
   <h3>模板驱动表单--Super hero form</h3>
 
@@ -82,7 +86,7 @@ Favorite Color(模板驱动表单): <input type="text" [(ngModel)]="favoriteColo
           <label for="name">Name</label>
           <input type="text" class="form-control" id="name" required
                   required
-                  [(ngModel)]="model.name" name="name" 
+                  [(ngModel)]="model.name" name="name" appForbiddenName="bob"
                   #spy="ngModel">
                   <!-- 当在表单中使用 [(ngModel)] 时，必须要定义 name 属性。 -->
           <div [hidden]="spy.valid || spy.pristine" class="alert alert-danger">
@@ -128,4 +132,10 @@ Favorite Color(模板驱动表单): <input type="text" [(ngModel)]="favoriteColo
     <button class="btn btn-primary" (click)="submitted=false">Edit</button>
   </div>
 
+</div>
+<!-- 模板驱动表单 over -->
+
+<div class="container">
+  <h3>Dynamic form demo-Job application for heroes</h3>
+  <app-dynamic-form [questions]="questions"></app-dynamic-form>
 </div>
