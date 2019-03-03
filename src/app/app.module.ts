@@ -1,3 +1,4 @@
+import { QuestionService } from './service/question.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -27,6 +28,8 @@ import { VoterParentComponent } from './components/voter-parent/voter-parent.com
 import { CustomerDashboardModule } from './components/customer-dashboard/customer-dashboard.module';
 import { FormDemoComponent } from './components/form-demo/form-demo.component';
 import { ForbiddenNameDirective } from './directive/forbidden-name.directive';
+import { DynamicFormComponent } from './components/form-demo/dynamic-form/dynamic-form.component';
+import { DynamicFormQuestionComponent } from './components/form-demo/dynamic-form/dynamic-form-question/dynamic-form-question.component';
 
 
 @NgModule({
@@ -53,6 +56,8 @@ import { ForbiddenNameDirective } from './directive/forbidden-name.directive';
     VoterParentComponent,
     FormDemoComponent,
     ForbiddenNameDirective,
+    DynamicFormComponent,
+    DynamicFormQuestionComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +74,9 @@ import { ForbiddenNameDirective } from './directive/forbidden-name.directive';
 
     CustomerDashboardModule // 特性模块
   ],
-  providers: [],
+  providers: [
+    QuestionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

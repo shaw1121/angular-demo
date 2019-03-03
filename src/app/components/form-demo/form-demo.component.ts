@@ -1,3 +1,4 @@
+import { QuestionService } from './../../service/question.service';
 import { SuperHero } from './../../model/super-hero';
 import { FormControl, FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Component } from '@angular/core';
@@ -10,7 +11,11 @@ import { forbiddenNameValidator } from 'src/app/directive/forbidden-name.directi
 })
 export class FormDemoComponent {
 
-  constructor(private fb: FormBuilder) { }
+  questions: any[];
+
+  constructor(private fb: FormBuilder, questionService: QuestionService) { 
+    this.questions = questionService.getQuestions();
+  }
 
   favoriteColorControl = new FormControl('');
 
