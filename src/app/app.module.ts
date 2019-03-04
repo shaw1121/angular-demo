@@ -16,7 +16,7 @@ import { DatePipeComponent } from './components/date-pipe/date-pipe.component';
 import { ExponentialStrengthPipe } from './pipe/exponential-strength.pipe';
 import { PowerBoosterComponent } from './components/power-booster/power-booster.component';
 import { FlyingHeroesComponent } from './components/flying-heroes/flying-heroes.component';
-import { FlyingHeroesPipe } from './pipe/flying-heroes.pipe';
+import { FlyingHeroesPipe, FlyingHeroesImpurePipe } from './pipe/flying-heroes.pipe';
 import { HeroChildComponent } from './components/hero-child/hero-child.component';
 import { HeroParentComponent } from './components/hero-parent/hero-parent.component';
 import { NameChildComponent } from './components/name-child/name-child.component';
@@ -30,6 +30,7 @@ import { FormDemoComponent } from './components/form-demo/form-demo.component';
 import { ForbiddenNameDirective } from './directive/forbidden-name.directive';
 import { DynamicFormComponent } from './components/form-demo/dynamic-form/dynamic-form.component';
 import { DynamicFormQuestionComponent } from './components/form-demo/dynamic-form/dynamic-form-question/dynamic-form-question.component';
+import { InMemoryDataService } from './service/in-memory-data.service';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { DynamicFormQuestionComponent } from './components/form-demo/dynamic-for
     ForbiddenNameDirective,
     DynamicFormComponent,
     DynamicFormQuestionComponent,
+    FlyingHeroesImpurePipe
   ],
   imports: [
     BrowserModule,
@@ -70,7 +72,7 @@ import { DynamicFormQuestionComponent } from './components/form-demo/dynamic-for
     // Remove it when a real server is ready to receive requests.
     // HttpClientInMemoryWebApiModule.forRoot(
     //   InMemoryDataService, { dataEncapsulation: false }
-    // )
+    // ),
 
     CustomerDashboardModule // 特性模块
   ],
