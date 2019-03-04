@@ -30,6 +30,7 @@ import { FormDemoComponent } from './components/form-demo/form-demo.component';
 import { ForbiddenNameDirective } from './directive/forbidden-name.directive';
 import { DynamicFormComponent } from './components/form-demo/dynamic-form/dynamic-form.component';
 import { DynamicFormQuestionComponent } from './components/form-demo/dynamic-form/dynamic-form-question/dynamic-form-question.component';
+import { InMemoryDataService } from './service/in-memory-data.service';
 
 
 @NgModule({
@@ -71,7 +72,7 @@ import { DynamicFormQuestionComponent } from './components/form-demo/dynamic-for
     // Remove it when a real server is ready to receive requests.
     // HttpClientInMemoryWebApiModule.forRoot(
     //   InMemoryDataService, { dataEncapsulation: false }
-    // )
+    // ),
 
     CustomerDashboardModule // 特性模块
   ],
