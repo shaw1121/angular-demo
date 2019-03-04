@@ -16,7 +16,7 @@ import { DatePipeComponent } from './components/date-pipe/date-pipe.component';
 import { ExponentialStrengthPipe } from './pipe/exponential-strength.pipe';
 import { PowerBoosterComponent } from './components/power-booster/power-booster.component';
 import { FlyingHeroesComponent } from './components/flying-heroes/flying-heroes.component';
-import { FlyingHeroesPipe } from './pipe/flying-heroes.pipe';
+import { FlyingHeroesPipe, FlyingHeroesImpurePipe } from './pipe/flying-heroes.pipe';
 import { HeroChildComponent } from './components/hero-child/hero-child.component';
 import { HeroParentComponent } from './components/hero-parent/hero-parent.component';
 import { NameChildComponent } from './components/name-child/name-child.component';
@@ -58,6 +58,7 @@ import { DynamicFormQuestionComponent } from './components/form-demo/dynamic-for
     ForbiddenNameDirective,
     DynamicFormComponent,
     DynamicFormQuestionComponent,
+    FlyingHeroesImpurePipe
   ],
   imports: [
     BrowserModule,
