@@ -19,11 +19,8 @@ export class CutomerDashboardComponent {
   time = new Observable<string>((observer: Observer<string>) => {
     setInterval(() => observer.next(new Date().toString()), 1000);
   });
-
-
  
   private resolve: Function|null = null;
- 
  
   reset() {
     this.arrived = false;
@@ -40,5 +37,4 @@ export class CutomerDashboardComponent {
       this.arrived = true;
     }
   }
-
 }

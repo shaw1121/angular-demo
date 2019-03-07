@@ -1,10 +1,9 @@
-<p>
-  cutomer-dashboard works!
-</p>
-<div><code>observable|async</code>: Time: {{ time | async }}</div>
+<div>
+  <code>observable|async</code>: Time: {{ time | async }}
+</div>
 
 <div>
   <code>promise|async</code>: 
-  <button (click)="clicked()">{{ arrived ? 'Reset' : 'Resolve' }}</button>
+  <button class="btn btn-primary" (click)="clicked()">{{ arrived ? 'Reset' : 'Resolve' }}</button>
   <span>Wait for it... {{ greeting | async }}</span>
 </div>
