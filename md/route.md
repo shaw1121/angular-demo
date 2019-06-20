@@ -82,6 +82,12 @@ https://angular.cn/api/router/ActivatedRouteSnapshot
 ### 通过 crisis-center 讲解 子路由
 
 
+### [Resolve](https://angular.cn/guide/router#resolve-pre-fetching-component-data)
+
+[从 usermanagement ui 看 resolve 的应用](./mdsp-settings-ui.md)
+
+
+
 
 Refer:   
 https://angular.cn/guide/router#routing--navigation

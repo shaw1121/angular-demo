@@ -1,12 +1,14 @@
 import { Hero } from './../../model/hero';
 import { HeroService } from './../../service/hero.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { op, fun } from '../../service/op';
 
 // 逻辑
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss']
+  styleUrls: ['./heroes.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeroesComponent implements OnInit {
 
@@ -18,9 +20,18 @@ export class HeroesComponent implements OnInit {
 
   // heroes = HEROES;
   heroes: Hero[];
+  // f;
+  fs = op;
 
   ngOnInit() {
-    this.getHeroes();
+    // this.getHeroes();
+    setTimeout(() => { this.fs([1]).then(() => console.log('done 1'))}, 3);
+    
+    setTimeout(() => { this.fs([2]).then(() => console.log('done 2'))}, 102);
+    
+    setTimeout(() => { this.fs([3]).then(() => console.log('done 3'))}, 120);
+    
+    setTimeout(() => { this.fs([4]).then(() => console.log('done 4'))}, 300);
   }
 
   getHeroes(): void {
