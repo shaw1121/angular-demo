@@ -12,7 +12,7 @@
 
 <!-- directive start-->
 <div>
-
+  <h2>directive</h2>
   <!-- [appHighlight] 属性同时做了两件事：把这个高亮指令应用到了 <p> 元素上，并且通过属性绑定设置了该指令的高亮颜色 -->
   <!-- <p appHighlight [highlightColor]="color">Highlighted with parent component's color</p> -->
   <p [appHighlight]="color">Highlight me</p>
@@ -42,9 +42,12 @@
 
 <!-- directive over-->
 
-<app-date-pipe></app-date-pipe>
+<div>
+  <h2>pipe</h2>
+  <app-date-pipe></app-date-pipe>
+  <app-power-booster></app-power-booster>
+</div>
 
-<app-power-booster></app-power-booster>
 
 <!-- <div id="parent-to-child">
   <b>通过输入型绑定把数据从父组件传到子组件</b>
@@ -63,8 +66,11 @@
 <div>
     <app-voter-parent></app-voter-parent>
 </div>
-<br>
-<div> 
-  >>>>>特性模块
-  <app-cutomer-dashboard></app-cutomer-dashboard>
+
+<div>
+  <h3>特性模块</h3>
+  <div>
+    <app-cutomer-dashboard></app-cutomer-dashboard>
+  </div>
 </div>
+

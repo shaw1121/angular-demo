@@ -64,7 +64,8 @@ export class FormDemoComponent {
   }
 
   addAlias() {
-    this.aliases.push(this.fb.control(''));
+    this.aliases.push(this.fb.control('5'));
+    this.profileForm.invalid
   }
 
   // 模板驱动表单 start
