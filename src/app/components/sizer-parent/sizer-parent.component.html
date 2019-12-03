@@ -1,0 +1,7 @@
+
+<app-sizer [size]="fontSizePx" (sizeChange)="fontSize=$event"></app-sizer>
+<div [style.font-size.px]="fontSizePx">Resizable Text</div>
+
+<!-- 双向绑定语法糖 -->
+<app-sizer [(size)]="fontSizePx"></app-sizer>
+<div [style.font-size.px]="fontSizePx">Resizable Text</div>

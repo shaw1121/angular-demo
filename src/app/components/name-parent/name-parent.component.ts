@@ -4,7 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-name-parent',
   template: `
     <h3>master controls {{names.length}} names</h3>
-    <app-name-child *ngFor="let name of names" [name]="name"></app-name-child>
+    <app-name-child *ngFor="let name of names" [name]="name">
+    </app-name-child>
   `,
   styleUrls: ['./name-parent.component.scss']
 })
