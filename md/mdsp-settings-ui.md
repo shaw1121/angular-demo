@@ -1,3 +1,4 @@
+
 ## 从 usermanagement ui 看 [resolve](https://angular.cn/guide/router#resolve-pre-fetching-component-data) 的应用
 
 Resolve 的作用：

@@ -31,6 +31,12 @@ import { ForbiddenNameDirective } from './directive/forbidden-name.directive';
 import { DynamicFormComponent } from './components/form-demo/dynamic-form/dynamic-form.component';
 import { DynamicFormQuestionComponent } from './components/form-demo/dynamic-form/dynamic-form-question/dynamic-form-question.component';
 import { InMemoryDataService } from './service/in-memory-data.service';
+import { CountDownParentComponent } from './components/count-down-parent/count-down-parent.component';
+import { CountdownTimerComponent } from './components/countdown-timer/countdown-timer.component';
+import { MissionControlComponent } from './components/missioncontrol/missioncontrol.component';
+import { AstronautComponent } from './components/astronaut/astronaut.component';
+import { SizerComponent } from './components/sizer/sizer.component';
+import { SizerParentComponent } from './components/sizer-parent/sizer-parent.component';
 
 
 @NgModule({
@@ -59,7 +65,13 @@ import { InMemoryDataService } from './service/in-memory-data.service';
     ForbiddenNameDirective,
     DynamicFormComponent,
     DynamicFormQuestionComponent,
-    FlyingHeroesImpurePipe
+    FlyingHeroesImpurePipe,
+    CountDownParentComponent,
+    CountdownTimerComponent,
+    MissionControlComponent,
+    AstronautComponent,
+    SizerComponent,
+    SizerParentComponent
   ],
   imports: [
     BrowserModule,

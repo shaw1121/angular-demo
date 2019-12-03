@@ -3,8 +3,6 @@ import { QuestionBase } from '../model/dynamic-form/question-base';
 import { DropdownQuestion } from '../model/dynamic-form/dropdown-question';
 import { TextboxQuestion } from '../model/dynamic-form/textbox-question';
 
-
-
 @Injectable()
 export class QuestionService {
 
