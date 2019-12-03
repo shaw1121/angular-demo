@@ -23,10 +23,10 @@
 
 * [图标的使用](./md/icon.md)
 
-* [import jquery in angular 6](../md/import-jquery-in-angular6.md)
+* [import jquery in angular 6](./md/import-jquery-in-angular6.md)
 
-* [HTML5标签属性之 `crossOrigin`](../md/crossorigin.md)
+* [HTML5标签属性之 `crossOrigin`](./md/crossorigin.md)
 
 * [需要研究的问题及模板语法](https://github.com/shaw1121/angular-demo/blob/master/research.md)
 
-* Angular modules (NgModule) and their scopes
+* [Angular modules (NgModule) and their scopes](./md/ngModule.md)
