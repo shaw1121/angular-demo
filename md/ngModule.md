@@ -1,4 +1,6 @@
 
+# NgModule
+
 NgModule 是一个带有 @NgModule() 装饰器的类。@NgModule() 装饰器是一个函数，它接受一个元数据对象，该对象的属性用来描述这个模块。其中最重要的属性如下。
 
 * declarations（可声明对象表） —— 那些属于本 NgModule 的组件、指令、管道。
@@ -28,7 +30,6 @@ Defines the set of injectable objects that are available in the injector of this
      this module is bootstrapped. The components listed here
      will automatically be added to `entryComponents`.
 
-
 # Angular modules (NgModule) and their scopes
 
 The purpose of a NgModule is to declare each thing you create in Angular, and group them together (like Java packages or PHP / C# namespaces).
@@ -40,21 +41,22 @@ There is two kind of main structures:
 
 ## Scope
 
-* declarations / components are in local scope (private visibility),
-* providers / services are (generally) in global scope (public visibility).
+* **declarations / components** are in local scope (private visibility),
+* **providers / services** are (generally) in global scope (public visibility).
 
 It means the components you declared are only usable in the current module. If you need to use them outside, in other modules, you’ll have to export them:
 
 
 * imports for module
 
-    if the module is imported for components, you’ll need to import it in each module needing them,
-    if the module is imported for services, you’ll need to import it only once, in the first app module.
+    if the module is imported for **components**, you’ll need to import it in each module needing them,
+    if the module is imported for **services**, you’ll need to import it only once, in the first app module.
 
 
 When to import main Angular modules?
 
 A good knowledge of Angular modules is then required, to know how many times you need to import them. Here is an helpful summary.
+
 Modules to import each time you need them
 
 *    CommonModule (all the basics of Angular templating: bindings, *ngIf, *ngFor…), except in the first app module, because it’s already part of the BrowserModule
