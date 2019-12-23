@@ -6,6 +6,8 @@
 
 * [可观察对象observable](./md/Observable.md)
 * [rxjs](./md/rxjs.md)
+* [Subject VS. BehaviorSubject](./md/Subject&BehaviorSubject.md)
+* [pipe](./md/pipeable-operators)
 
 * [指令](https://github.com/shaw1121/angular-demo/blob/master/directive.md)
 
@@ -30,3 +32,5 @@
 * [需要研究的问题及模板语法](https://github.com/shaw1121/angular-demo/blob/master/research.md)
 
 * [Angular modules (NgModule) and their scopes](./md/ngModule.md)
+
+* [constructor VS. ngOnInit()](./md/constructor&ngOnInit.md)
